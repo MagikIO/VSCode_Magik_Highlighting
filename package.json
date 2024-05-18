@@ -1,6 +1,6 @@
 {
-  "name": "vs_magik_highlighting",
-  "displayName": "VSCode_Magik_Highlighting",
+  "name": "magik-highlighting",
+  "displayName": "Magik Highlighting",
   "description": "Syntax highlighting as easy as Magik in Visual Studio Code",
   "version": "1.1.1",
   "publisher": "MagikIO",
