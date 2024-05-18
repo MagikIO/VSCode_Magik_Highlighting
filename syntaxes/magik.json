@@ -1,6 +1,8 @@
 {
-  "fileTypes": ["js", "jsx", "ts", "tsx", "css", "html"],
-  "injectionSelector": "L:source.js -comment -string, L:source.js -comment -string, L:source.jsx -comment -string, L:source.js.jsx -comment -string, L:source.ts -comment -string, L:source.tsx -comment -string",
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "fileTypes": ["js", "jsx", "ts", "tsx", "html"],
+  "name": "Magik (Script Highlighting)",
+  "injectionSelector": "L:source.js -comment -string, L:source.jsx -comment -string, L:source.ts -comment -string, L:source.tsx -comment -string",
   "injections": {
     "L:source": {
       "patterns": [
@@ -31,7 +33,7 @@
     },
 
     {
-      "begin": "(\\=)\\s*(`)",
+      "begin": "(\\+=|\\=)\\s*(`)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.assignment.js"
@@ -49,43 +51,7 @@
     },
 
     {
-      "begin": "(\\+=)\\s*(`)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.operator.assignment.compound.js"
-        }
-      },
-      "end": "(`)",
-      "patterns": [
-        {
-          "include": "source.ts#template-substitution-element"
-        },
-        {
-          "include": "text.html.basic"
-        }
-      ]
-    },
-
-    {
-      "begin": "(\\+)\\s*(`)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.operator.arithmetic.js"
-        }
-      },
-      "end": "(`)",
-      "patterns": [
-        {
-          "include": "source.ts#template-substitution-element"
-        },
-        {
-          "include": "text.html.basic"
-        }
-      ]
-    },
-
-    {
-      "begin": "(\\,)\\s*(`)",
+      "begin": "(\\+|\\,)\\s*(`)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.arithmetic.js"
@@ -139,42 +105,25 @@
     },
 
     {
-      "begin": "(`)(?!.*`)",
+      "begin": "(CSSVars|CSS)\\s*(`)",
       "beginCaptures": {
-        "0": {
-          "name": "punctuation.definition.template.begin.js"
-        }
-      },
-      "end": "(`)",
-      "endCaptures": {
-        "0": {
-          "name": "punctuation.definition.template.end.js"
-        }
-      },
-      "patterns": [
-        {
-          "include": "text.html.basic"
-        }
-      ]
-    },
-
-    {
-      "begin": "(CSSVars)`",
-      "beginCaptures": {
-        "0": {
+        "1": {
           "name": "entity.name.tag.cssvars"
         }
       },
-      "end": "`",
+      "end": "(`)",
       "patterns": [
         {
-          "include": "source.css"
+          "include": "source.ts#template-substitution-element"
         },
         {
-          "include": "text.css.basic"
+          "include": "text.html.basic"
+        },
+        {
+          "include": "source.css"
         }
       ]
     }
   ],
-  "scopeName": "inline.magik-highlight"
+  "scopeName": "text.html"
 }

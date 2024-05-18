@@ -4,3 +4,4 @@
 .tools-versions
 .editorconfig
 vsc-extension-quickstart.md
+node_modules/**
