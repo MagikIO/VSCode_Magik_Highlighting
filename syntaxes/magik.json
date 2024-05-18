@@ -139,9 +139,29 @@
     },
 
     {
+      "begin": "(`)(?!.*`)",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.template.begin.js"
+        }
+      },
+      "end": "(`)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.template.end.js"
+        }
+      },
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+
+    {
       "begin": "(CSSVars)`",
       "beginCaptures": {
-        "1": {
+        "0": {
           "name": "entity.name.tag.cssvars"
         }
       },
@@ -149,6 +169,9 @@
       "patterns": [
         {
           "include": "source.css"
+        },
+        {
+          "include": "text.css.basic"
         }
       ]
     }
