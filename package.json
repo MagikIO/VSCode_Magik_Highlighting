@@ -1,0 +1,56 @@
+{
+  "name": "@magik_io/vs_magik_highlighting",
+  "displayName": "VSCode_Magik_Highlighting",
+  "description": "Syntax highlighting as easy as Magik in Visual Studio Code",
+  "version": "1.1.1",
+  "publisher": "MagikIO",
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#0078d7",
+    "theme": "dark"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "engines": {
+    "vscode": "^1.8.0"
+  },
+  "scripts": {
+    "iterate": "npm version patch && git push origin master --tags && npm publish --access public"
+  },
+  "contributes": {
+    "grammars": [
+      {
+        "injectTo": [
+          "source.html",
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.tsx",
+          "source.css",
+          "text.html"
+        ],
+        "scopeName": "inline.magik-highlight",
+        "path": "./syntaxes/magik.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.html": "html"
+        }
+      }
+    ]
+  },
+  "__metadata": {
+    "publisherDisplayName": "MagikIO"
+  },
+  "authors": [
+    {
+      "name": "Antonio B.",
+      "email": "Abourassa@AssetVal.com",
+      "github": "https://github.com/Abourass"
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/MagikIO/VSCode_Magik_Highlighting"
+  },
+  "license": "MIT"
+}
